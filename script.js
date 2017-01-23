@@ -3,7 +3,10 @@ $(document).ready(function() {
         type: "GET",
         url: "data.xml",
         dataType: "xml",
-        success: xmlFunction
+        success: xmlFunction,
+        error : function(){
+            alert("404 Not Found - Oops something went wrong !")
+        }
     });
 
     var value, key, nom, prenom;
