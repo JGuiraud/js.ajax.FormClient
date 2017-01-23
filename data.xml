@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <clients>
-    <person id="0">
+    <person key="0">
         <nom>Doe</nom>
         <prenom>John</prenom>
         <age>31</age>
@@ -8,13 +8,20 @@
         <email>john.doe@email.com</email>
         <telephone>0601000000</telephone>
     </person>
-    <person id="1">
-        <key>2</key>
+    <person key="1">
         <nom>Smith</nom>
         <prenom>Jane</prenom>
         <age>28</age>
         <profession>Astronome</profession>
         <email>jane.smith@email.com</email>
         <telephone>0602000000</telephone>
+    </person>
+    <person key="2">
+        <nom>Doe</nom>
+        <prenom>Suzy</prenom>
+        <age>34</age>
+        <profession>Web Developper</profession>
+        <email>suzy.doeh@email.com</email>
+        <telephone>0623000000</telephone>
     </person>
 </clients>

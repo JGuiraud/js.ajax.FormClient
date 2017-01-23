@@ -1,26 +1,3 @@
-// $(document).ready(function(){
-//     $.ajax({
-//         type:'GET',
-//         url:'data.xml',
-//         dataType:"xml",
-//         success: xmlFunction
-//     });
-// });
-
-// function xmlFunction(xml){
-//     $(xml).find('person').each(function(){
-//         var id = $(this).attr('id');
-//         var nom = $(this).find('nom');
-//         var prenom = $(this).find('prenom');
-//         var age = $(this).find('age');
-//         var profession = $(this).find('profession');
-//         var email = $(this).find('email');
-//         var telephone = $(this).find('telephone');
-//         console.log(telephone);
-//     })
-// }
-
-
 $(document).ready(function() {
     $.ajax({
         type: "GET",
@@ -28,18 +5,19 @@ $(document).ready(function() {
         dataType: "xml",
         success: xmlFunction
     });
+
+    var value, key, nom, prenom;
         
         function xmlFunction(xml){
-            $(xml).find('person').each(function(){
-                var id = $(this).attr('id');
-                var nom = $(this).find('nom').text();
-                var prenom = $(this).find('prenom').text();
-                var age = $(this).find('age').text()
-                var profession = $(this).find('profession').text();
-                var email = $(this).find('email').text();
-                var telephone = $(this).find('telephone').text();
-                console.log(id + nom)
-                $(".dropDown").append($('<option>', { value:id, text: prenom + " " + nom}))
+            $('select').change(function(){
+                value=this.value
+                nom = xml.getElementsByTagName("nom")[value].firstChild.nodeValue
+                prenom = xml.getElementsByTagName("prenom")[value].firstChild.nodeValue;
+                var age = xml.getElementsByTagName("age")[value].firstChild.nodeValue;
+                var profession = xml.getElementsByTagName("profession")[value].firstChild.nodeValue;
+                var email = xml.getElementsByTagName("email")[value].firstChild.nodeValue;
+                var telephone = xml.getElementsByTagName("telephone")[value].firstChild.nodeValue;
+                
                 $(".selectedClient").html(
                     "nom : " + nom + "<br>" +
                     "prénom : " + prenom + "<br>" +
@@ -47,128 +25,18 @@ $(document).ready(function() {
                     "profession : " + profession + "<br>" +
                     "email : " + email + "<br>" +
                     "téléphone : " + telephone);
+
+            })
+
+            $(xml).find('person').each(function(){
+                key = $(this).attr('key');
+                nom = $(this).find('nom').text();
+                prenom = $(this).find('prenom').text();
+
+                $(".dropDown").append($('<option>', { value:key, text: prenom + " " + nom}));
+
                 });
             }
 
+
 });
-
-        // });
-
-//         $('select').change(function () {
-//         var valueSelect = $(this).val()
-//   });
-
-
-//         if (status >= 200 && status < 300) {
-//             var xml = xhr.responseXML;
-
-//             $('select').change(function () {
-//                 var valueSelect = $(this).val();
-
-//                 if (valueSelect == "John") {
-//                     nom = xml.getElementsByTagName("nom")[0].firstChild.nodeValue;
-//                     prenom = xml.getElementsByTagName("prenom")[0].firstChild.nodeValue;
-//                     age = xml.getElementsByTagName("age")[0].firstChild.nodeValue;
-//                     profession = xml.getElementsByTagName("profession")[0].firstChild.nodeValue;
-//                     email = xml.getElementsByTagName("email")[0].firstChild.nodeValue;
-//                     telephone = xml.getElementsByTagName("telephone")[0].firstChild.nodeValue;
-
-//                     $(".selectedClient").html(
-//                     "nom : " + nom + "<br>" +
-//                     "prénom : " + prenom + "<br>" +
-//                     "age : " + age + "<br>" +
-//                     "profession : " + profession + "<br>" +
-//                     "email : " + email + "<br>" +
-//                     "téléphone : " + telephone);
-//                 }
-
-//                 if (valueSelect == "Jane") {
-//                     nom = xml.getElementsByTagName("nom")[1].firstChild.nodeValue;
-//                     prenom = xml.getElementsByTagName("prenom")[1].firstChild.nodeValue;
-//                     age = xml.getElementsByTagName("age")[1].firstChild.nodeValue;
-//                     profession = xml.getElementsByTagName("profession")[1].firstChild.nodeValue;
-//                     email = xml.getElementsByTagName("email")[1].firstChild.nodeValue;
-//                     telephone = xml.getElementsByTagName("telephone")[1].firstChild.nodeValue;
-
-//                     $(".selectedClient").html(
-//                     "nom : " + nom + "<br>" +
-//                     "prénom : " + prenom + "<br>" +
-//                     "age : " + age + "<br>" +
-//                     "profession : " + profession + "<br>" +
-//                     "email : " + email + "<br>" +
-//                     "téléphone : " + telephone);
-//                 }
-
-//             });
-
-//         } else {
-//             alert('Something bad happened')
-//         }
-//     }
-// };
-// xhr.send(null);
-
-
-
-
-
-
-
-
-
-
-
-
-// $(document).ready(function(){
-//     $.ajax({
-//         type:'GET',
-//         url:'data.xml',
-//         dataType:"xml",
-//         success: xmlFunction
-//     });
-// });
-
-// function xmlFunction(){
-
-//             $('select').change(function () {
-//                 var valueSelect = $(this).val()
-
-//                 if (valueSelect == "John") {
-//                     nom = xml.getElementsByTagName("nom")[0].firstChild.nodeValue;
-//                     prenom = xml.getElementsByTagName("prenom")[0].firstChild.nodeValue;
-//                     age = xml.getElementsByTagName("age")[0].firstChild.nodeValue;
-//                     profession = xml.getElementsByTagName("profession")[0].firstChild.nodeValue;
-//                     email = xml.getElementsByTagName("email")[0].firstChild.nodeValue;
-//                     telephone = xml.getElementsByTagName("telephone")[0].firstChild.nodeValue;
-
-//                     $(".selectedClient").html(
-//                     "nom : " + nom + "<br>" +
-//                     "prénom : " + prenom + "<br>" +
-//                     "age : " + age + "<br>" +
-//                     "profession : " + profession + "<br>" +
-//                     "email : " + email + "<br>" +
-//                     "téléphone : " + telephone);
-//                 }
-
-//                 if (valueSelect == "Jane") {
-//                     nom = xml.getElementsByTagName("nom")[1].firstChild.nodeValue;
-//                     prenom = xml.getElementsByTagName("prenom")[1].firstChild.nodeValue;
-//                     age = xml.getElementsByTagName("age")[1].firstChild.nodeValue;
-//                     profession = xml.getElementsByTagName("profession")[1].firstChild.nodeValue;
-//                     email = xml.getElementsByTagName("email")[1].firstChild.nodeValue;
-//                     telephone = xml.getElementsByTagName("telephone")[1].firstChild.nodeValue;
-
-//                     $(".selectedClient").html(
-//                     "nom : " + nom + "<br>" +
-//                     "prénom : " + prenom + "<br>" +
-//                     "age : " + age + "<br>" +
-//                     "profession : " + profession + "<br>" +
-//                     "email : " + email + "<br>" +
-//                     "téléphone : " + telephone);
-//                 }
-
-//             });
-
-//         } 
-
-
