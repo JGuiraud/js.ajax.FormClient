@@ -8,8 +8,7 @@ xhr.onreadystatechange = function(){
 
         if (status >= 200 && status < 300) {
             var xml = xhr.responseXML;
-            console.log(xml)
-            
+                        
             $('select').change(function () {
                 var valueSelect = $(this).val();
 
@@ -54,5 +53,4 @@ xhr.onreadystatechange = function(){
         }
     }
 };
-
 xhr.send(null);
