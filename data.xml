@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<clients>
+    <person>
+        <nom>Doe</nom>
+        <prenom>John</prenom>
+        <age>31</age>
+        <profession>Enseignant</profession>
+        <email>john.doe@email.com</email>
+        <telephone>0601000000</telephone>
+    </person>
+    <person>
+        <nom>Smith</nom>
+        <prenom>Jane</prenom>
+        <age>28</age>
+        <profession>Astronome</profession>
+        <email>jane.smith@email.com</email>
+        <telephone>0602000000</telephone>
+    </person>
+</clients>
