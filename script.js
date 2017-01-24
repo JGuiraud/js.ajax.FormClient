@@ -28,7 +28,6 @@ $(document).ready(function() {
                     "profession : " + profession + "<br>" +
                     "email : " + email + "<br>" +
                     "téléphone : " + telephone);
-
             })
 
             $(xml).find('person').each(function(){
@@ -37,9 +36,14 @@ $(document).ready(function() {
                 prenom = $(this).find('prenom').text();
 
                 $(".dropDown").append($('<option>', { value:key, text: prenom + " " + nom}));
-
                 });
+
+            $(xml).find('person').each()
+            console.log(test);
+
             }
+
+
 
 
 });
