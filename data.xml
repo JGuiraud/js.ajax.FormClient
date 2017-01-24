@@ -24,4 +24,20 @@
         <email>suzy.doeh@email.com</email>
         <telephone>0623000000</telephone>
     </person>
+    <person key="3">
+        <nom>Table</nom>
+        <prenom>Fork</prenom>
+        <age>35</age>
+        <profession>Web Developper</profession>
+        <email>suzy.doeh@email.com</email>
+        <telephone>0623000000</telephone>
+    </person>
+    <person key="5">
+        <nom>bouteille</nom>
+        <prenom>Laurie</prenom>
+        <age>35</age>
+        <profession>Web Developper</profession>
+        <email>suzy.doeh@email.com</email>
+        <telephone>0623000000</telephone>
+    </person>
 </clients>
