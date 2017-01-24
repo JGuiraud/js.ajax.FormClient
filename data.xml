@@ -21,23 +21,23 @@
         <prenom>Suzy</prenom>
         <age>34</age>
         <profession>Web Developper</profession>
-        <email>suzy.doeh@email.com</email>
+        <email>suzy.doe@email.com</email>
         <telephone>0623000000</telephone>
     </person>
     <person key="3">
         <nom>Table</nom>
         <prenom>Fork</prenom>
-        <age>35</age>
-        <profession>Web Developper</profession>
-        <email>suzy.doeh@email.com</email>
-        <telephone>0623000000</telephone>
+        <age>65</age>
+        <profession>Retraité</profession>
+        <email>fork.table@email.com</email>
+        <telephone>0655000000</telephone>
     </person>
     <person key="5">
-        <nom>bouteille</nom>
+        <nom>Bouteille</nom>
         <prenom>Laurie</prenom>
-        <age>35</age>
-        <profession>Web Developper</profession>
-        <email>suzy.doeh@email.com</email>
-        <telephone>0623000000</telephone>
+        <age>21</age>
+        <profession>Etudiantes</profession>
+        <email>laurie.bouteille@email.com</email>
+        <telephone>0634000000</telephone>
     </person>
 </clients>
